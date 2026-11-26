@@ -2,7 +2,7 @@
 
 ## 1. Kết luận trước
 
-Lớp **L23**, task **D13-2A202603176**, tài khoản `kimtrai205`; Windows, Microsoft Edge; CVAT server/UI **2.74.1** (đọc từ About). Bảng A và phiếu tự kiểm được cập nhật sau Save và `python scripts/lab.py sync`.
+Lớp **L23**, task **D13-2A202603176**, tài khoản `kimtrai205`; Windows, Microsoft Edge; CVAT server/UI **2.74.1** (đọc từ About). MSSV người kiểm chéo: **2A202603233**. Bảng A và phiếu tự kiểm được cập nhật sau Save và `python scripts/lab.py sync`.
 
 Có **92 cuboid / 10 frame**, gồm 81 Car, 3 Truck, 3 Bus, 5 Cyclist; 91 hộp có tâm trong 50 m. Số hộp từng frame: s01f05: 10; s01f58: 8; s02f02: 7; s02f34: 8; s03f00: 12; s03f41: 5; s04f09: 13; s04f33: 9; s05f12: 13; s05f41: 7. Frame ít nhất là `s03f41` (5 hộp): lựa chọn hiện tại còn hạn chế và có một hộp ngoài 50 m; đây là điểm yếu về phạm vi cần ghi nhận. Phiếu tự kiểm còn **1/92 hộp có cờ**. Các xe gần có nhiều điểm là phần có cơ sở hình học rõ hơn; class của xe thân cao, đầu xe nhỏ và vật xa còn cần thận trọng. Số hộp và số cờ không chứng minh nhãn đã khớp nhãn chuẩn.
 
@@ -95,7 +95,14 @@ Các sửa đổi đã lưu và xuất lại (đối chiếu bản nhãn trướ
 
 **Cờ giữ lại:** `s05f41 #5 Car`, cao 2,36 m, vượt mốc rộng của công cụ 2,30 m. Camera cho thấy vật thân cao dạng van; chưa xác định chắc công năng chở khách/chở hàng, nên giữ class và hình học hiện tại, ghi **UNCERTAIN_CLASS/chiều cao cần kiểm**, không đổi class hoặc ép thấp hộp chỉ để hết cờ. Điều này chưa chứng minh class Car và chiều cao đều đúng.
 
-**Kiểm chéo:** chưa thực hiện với bạn học; chưa có MSSV người kiểm hay kết quả đối chiếu. Hai số chuẩn bị để kiểm trên màn hình: đáy `s01f05 #1` = −1,710 m và `points_in` của `s01f05 #8` = 162 điểm. Đây là hai số đề xuất, **không phải kết quả đã kiểm chéo**.
+**Kiểm chéo:** người kiểm có MSSV **2A202603233**. Theo xác nhận của học viên, bạn đã đối chiếu hai số trong báo cáo với Bảng A/phiếu tự kiểm trên màn hình:
+
+| Số được kiểm | Giá trị trong báo cáo | Kết quả đối chiếu |
+|---|---|---|
+| Đáy cuboid `s01f05 #1` | −1,710 m | Khớp Bảng A |
+| `points_in` của `s01f05 #8` | 162 điểm | Khớp phiếu tự kiểm |
+
+Cả hai số đều khớp, không cần sửa số liệu sau kiểm chéo.
 
 ## 6. Ý nghĩa của nhãn, cách dùng AI và điều còn chưa chắc
 
@@ -105,4 +112,4 @@ Model dự đoán vị trí và kích thước trong không gian thật nên nh�
 - **Câu hỏi chính:** cách dùng lệnh/CVAT, rà soát cảnh báo, đọc số đo và hoàn thiện bài nộp.
 - **Cách dùng kết quả:** AI đã hỗ trợ xem dữ liệu/ảnh, đề xuất và hỗ trợ chỉnh một số cuboid trong các lượt trước, tính số liệu, soạn báo cáo và thêm chú thích hướng. Báo cáo khai rõ các phần có AI hỗ trợ; kết quả cần được học viên tự đối chiếu, không coi số cờ bằng điểm số.
 
-Điều còn chưa chắc: đầu/độ dài Cyclist ít điểm; class và chiều cao của van `s05f41 #5`; vật ngoài 50 m ở `s03f41`; nguyên nhân của dải điểm lẻ ở `s03f00`. Chưa kiểm chéo với bạn học. Không có kết quả nhãn chuẩn nên chưa biết recall, IoU hay số hộp ngược đầu thực tế.
+Điều còn chưa chắc: đầu/độ dài Cyclist ít điểm; class và chiều cao của van `s05f41 #5`; vật ngoài 50 m ở `s03f41`; nguyên nhân của dải điểm lẻ ở `s03f00`. Không có kết quả nhãn chuẩn nên chưa biết recall, IoU hay số hộp ngược đầu thực tế.
