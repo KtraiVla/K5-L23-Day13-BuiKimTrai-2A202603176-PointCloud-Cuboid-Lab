@@ -2,7 +2,17 @@
   <img src="docs/assets/hero.png" alt="Day 13 Lab: đọc point cloud VF và vẽ cuboid 3D đầu tiên" width="100%">
 </p>
 
-# Day 13 Lab — Đọc point cloud VF và vẽ cuboid 3D đầu tiên
+# Day 13 Lab — 2A202603176 - Bùi Kim Trại
+
+Lớp **L23** · Task **D13-2A202603176** · **92 cuboid / 10 frame**.
+
+| Thành phần bài nộp | Vị trí |
+|---|---|
+| Báo cáo cá nhân | [Bùi Kim Trại](report/individual/2A202603176_BuiKimTrai.md) |
+| Bảng A | [D13-2A202603176-bangA.csv](submission/D13-2A202603176-bangA.csv) |
+| Phiếu tự kiểm | [D13-2A202603176-tukiem.csv](submission/D13-2A202603176-tukiem.csv) |
+| 11 ảnh minh chứng | ZIP ảnh nộp riêng trên LMS, không đưa ảnh lên repo public |
+
 
 <p align="center">
   <img alt="cá nhân" src="https://img.shields.io/badge/lab-cá%20nhân-0b1f3a">
