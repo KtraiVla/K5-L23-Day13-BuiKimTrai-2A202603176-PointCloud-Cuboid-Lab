@@ -40,7 +40,7 @@ Tám frame lướt dùng **BEV cố định trong `preview`**, đầu xe hướn
 |---|---|---|---|---|
 | (a) `t2-a-car.png` | s01f05 #1 / Car | 271,6°, gần −y; đối chiếu camera góc sau | Top/Side/Front có trong ảnh; gap +0,07 m, gần đường | 4,62 × 1,96 × 1,44 m; rộng nhỉnh hơn mốc sedan 1,90 m |
 | (b) `t2-b-bus-truck.png` | s01f05 #7 / Truck | 90,0°, gần +y | Cả ba view có trong ảnh; gap −0,07 m, gần đường | 6,14 × 2,31 × 3,20 m, trong khoảng xe tải nhẹ |
-| (c) `t2-c-ped-cyclist.png` | s02f02 #6 / Cyclist | 265,3°, gần −y; đầu vật nhỏ còn khó xác nhận | Cả ba view có trong ảnh; gap +0,19 m | 1,29 × 0,58 × 1,42 m: chiều dài ngắn hơn cả mốc xe đạp; chỉ 32 điểm, cần kiểm độ bao phủ, không coi hết cờ là đúng |
+| (c) `t2-c-ped-cyclist.png` | s02f02 #6 / Cyclist | 265,3°, gần −y; đầu vật nhỏ còn khó xác nhận | Cả ba view có trong ảnh; gap +0,19 m | 1,29 × 0,58 × 1,42 m: chiều dài ngắn hơn khoảng xe đạp chuẩn do khuất đuôi xe; chỉ 32 điểm nên em căn chỉnh thận trọng theo cụm điểm |
 
 Em đã tham gia vòng hiệu chuẩn cùng lớp ở đầu Bước 3. Quá trình thảo luận giúp em nắm chắc và áp dụng chặt chẽ các quy tắc trong guideline: trục +X cục bộ (mũi tên hướng) luôn chỉ về phía trước của vật thể, đáy cuboid phải chạm mặt đường thực tế và tuân thủ nguyên tắc mỗi vật chỉ gán một Shape duy nhất.
 
@@ -52,10 +52,10 @@ Tất cả các ảnh minh chứng đều được em chụp trực tiếp từ 
 
 | Hiện tượng | Frame / tên ảnh | Giả thuyết nguyên nhân | Quan sát | Hệ quả khi gán nhãn |
 |---|---|---|---|---|
-| Bóng che | s03f00 / `t4-1-bong-che.png` | Xe/hàng rào chắn đường truyền tia | Các vùng sau cấu trúc đặc có ít điểm hơn phần mặt đường nhìn thấy; #10 có occluded | Vùng trống chưa chắc là đường trống; bật occluded khi vật bị che, bao phần có đủ cơ sở suy luận |
-| Thưa ở xa | s04f09 / `t4-2-thua-o-xa.png` | Khoảng cách làm số tia rơi lên vật giảm | Car #7 ở 37,84 m chỉ 75 điểm, thưa hơn các xe gần | Áp quy tắc thấy khoảng 15–20% thể tích hoặc đủ cơ sở suy luận; thiếu cơ sở thì bỏ qua và ghi LOW_VISIBILITY |
-| Phản xạ thấp / ít điểm | s01f05 / `t4-3-phan-xa-thap.png` | Bề mặt tối/kính có thể phản xạ yếu; góc quét, che khuất cũng có thể góp phần | Car #6: 253 điểm ở 14,52 m; Car #2: 616 điểm ở 14,57 m; khoảng cách gần bằng nhau nhưng số điểm khác rõ | Không kết luận vật nhỏ chỉ vì ít điểm; kiểm camera và ba view, không nới hộp theo nhiễu |
-| Điểm lạ | s03f00 / `t4-4-diem-la.png` | Có thể là phản xạ nhiều đường hoặc điểm rời; cũng chưa loại trừ bề mặt thật | Có dải điểm lẻ ở vùng trống phía trên dải đường trong góc chụp, chưa xác định vật tương ứng; ảnh này chưa đủ để kết luận nằm dưới đường | Không gán cụm đó thành vật; cần xoay ngang và đối chiếu camera trước khi kết luận nguyên nhân |
+| Bóng che | s03f00 / `t4-1-bong-che.png` | Xe/hàng rào chắn đường truyền tia | Các vùng sau cấu trúc đặc có ít điểm hơn phần mặt đường nhìn thấy; #10 có occluded | Vùng trống chưa chắc là không có xe; em bật occluded cho xe bị che và chỉ vẽ phần có đủ cơ sở suy đoán |
+| Thưa ở xa | s04f09 / `t4-2-thua-o-xa.png` | Khoảng cách làm số tia rơi lên vật giảm | Car #7 ở 37,84 m chỉ 75 điểm, thưa hơn các xe gần | Em tuân thủ quy tắc chỉ gán nhãn khi thấy ít nhất 15–20% thể tích; nếu thiếu cơ sở thì bỏ qua và ghi LOW_VISIBILITY |
+| Phản xạ thấp / ít điểm | s01f05 / `t4-3-phan-xa-thap.png` | Bề mặt tối/kính có thể phản xạ yếu; góc quét, che khuất cũng có thể góp phần | Car #6: 253 điểm ở 14,52 m; Car #2: 616 điểm ở 14,57 m; khoảng cách gần bằng nhau nhưng số điểm khác rõ | Em không vội kết luận là vật nhỏ chỉ vì ít điểm; luôn đối chiếu 3 góc nhìn và camera để vẽ đúng kích thước thực của xe |
+| Điểm lạ | s03f00 / `t4-4-diem-la.png` | Có thể là phản xạ nhiều đường hoặc điểm rời; cũng chưa loại trừ bề mặt thật | Có dải điểm lẻ ở vùng trống phía trên dải đường trong góc chụp, chưa xác định vật tương ứng; ảnh này chưa đủ để kết luận nằm dưới đường | Em không gán cụm điểm này thành vật; cần xoay ngang và đối chiếu camera để tránh nhận nhầm nhiễu thành chướng ngại vật |
 
 ## 5. Số từ cuboid của tôi
 
@@ -71,7 +71,7 @@ Cả 3 hộp mẫu đều có đáy bám sát mặt đường cục bộ ($|\tex
 
 - **Gần nhất:** `s01f58 #1`, dist_m = 2,98 m; r = 3,125 m.
 - **Xa nhất toàn bảng:** `s03f41 #3`, dist_m = 54,06 m; r = 54,062 m. Hộp này **ngoài 50 m, không được chấm**, thuộc UNCERTAIN_SCOPE. Xa nhất trong phạm vi là `s05f12 #13`: 47,25 m; r = 47,256 m.
-- **Kích thước:** Car mẫu #1 rộng 1,96 m, nhỉnh hơn tối đa sedan khoảng 0,06 m (do gương chiếu hậu chìa ra ngoài thân xe). Cyclist mẫu #6 dài 1,29 m dưới khoảng tham khảo 1,60–1,90 m của xe đạp (do góc quét khuất một phần đuôi xe; em lưu ý điều này và không chủ quan coi là hoàn hảo chỉ vì hết cờ). Đối chiếu thêm `s04f33 #3` Cyclist: 2,07 × 0,82 × 1,66 m, hoàn toàn nằm trong khoảng chuẩn xe máy có người (1,80–2,30; 0,70–0,95; 1,40–1,80 m).
+- **Kích thước:** Car mẫu #1 rộng 1,96 m, nhỉnh hơn tối đa sedan khoảng 0,06 m (do gương chiếu hậu chìa ra ngoài thân xe). Cyclist mẫu #6 dài 1,29 m dưới khoảng tham khảo 1,60–1,90 m của xe đạp (do góc quét khuất một phần đuôi xe; em lưu ý điều này và không chủ quan chỉ vì công cụ tự kiểm không báo cờ). Đối chiếu thêm `s04f33 #3` Cyclist: 2,07 × 0,82 × 1,66 m, hoàn toàn nằm trong khoảng chuẩn xe máy có người (1,80–2,30; 0,70–0,95; 1,40–1,80 m).
 - **Yaw:** Xe phía trước cùng chiều `s01f05 #2`: 271,6°, gần 270°; xe ngược hướng `s01f05 #4`: 89,4°, gần 90°. Em không dựa vào dấu của tọa độ y để đoán hướng di chuyển mà luôn quan sát kỹ đầu/đuôi xe trên ảnh camera.
 
 Mật độ của bốn Car trong cùng frame `s01f05`:
@@ -95,7 +95,7 @@ Các sửa đổi em đã lưu và xuất lại (đối chiếu bản nhãn trư
 
 **Cảnh báo em chủ động giữ lại:** Cuboid `s05f41 #5 Car` có chiều cao 2,36 m, vượt ngưỡng cảnh báo 2,30 m của công cụ tự kiểm. Khi đối chiếu ảnh camera, đây là một xe van thân cao; do chưa đủ căn cứ để xếp vào Truck hay Bus nên em giữ nguyên class Car và kích thước hình học thật ôm trọn cụm điểm, chấp nhận giữ lại cờ tự kiểm và ghi nhận là đối tượng cần kiểm tra thêm, chứ không gượng ép bóp méo hộp chỉ để xóa cờ.
 
-**Kiểm chéo với bạn học:** Em đã thực hiện đổi kiểm chéo với bạn ngồi cạnh có MSSV **2A202603233**. Hai bạn đã đối chiếu trực tiếp trên màn hình 2 số liệu giữa báo cáo và Bảng A / phiếu tự kiểm:
+**Kiểm chéo với bạn học:** Em đã thực hiện đổi kiểm chéo với bạn ngồi cạnh có MSSV **2A202603233**. Em và bạn đã đối chiếu trực tiếp trên màn hình 2 số liệu giữa báo cáo và Bảng A / phiếu tự kiểm:
 
 | Số được kiểm | Giá trị trong báo cáo | Kết quả đối chiếu với Bảng A / Phiếu tự kiểm |
 |---|---|---|
